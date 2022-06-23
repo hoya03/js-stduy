@@ -1,0 +1,134 @@
+// 🎈 arrays  = 배열 🎈
+// 데이터 그룹을 묶어서 사용가능하다.
+
+// JS에서 배열을 만드는 방법 => 변수명 선언후 []대괄호 사용!
+let fruit = [];
+
+// 문자열 배열 => 변수명 선언후 []대괄호 안에 '' or "" 을 사용하여 데이터를 넣어준다
+let colors = ['blue', 'red', 'black']
+
+// 숫자 배열 => 변수명 선언후 []대괄호 안에 숫자를 넣어준다.
+let lottoNumbs = [4, 5, 7, 12, 77, 25];
+
+// 혼합 배열 => 숫자열 데이터와 문자열 데이터를 함께 정리할수도있다.
+
+let stuff = [true, false, null, 77, 'box']
+
+// .length 을 사용하면 배열안에 변수가 몇게인지 알수있게된다.
+// ex) lottoNumbs.length > 6
+
+// 🎈 index 란? 배열안의 자료를 순서를 구별해준다. 0부터 시작! 🎈
+// let colors = ['blue', 'red', 'black']
+colors[0] = 'blue'
+colors[1] = 'red'
+colors[2] = 'black'
+
+// 배열에 자료 추가하는법 [특정 문자를 바꿀수없는 문자열과 달리 배열은 바꿀수있다.]
+
+let color = ['rad', 'blue', 'black'];
+color[0] ='red';
+color[5]='pink'
+ 
+color //color의 인덱스 0이 rad=>red로 변경되었다. 인덱스 5에 pink를 넣었을때 비어있는 3,4 에는 empty 빈값이 2개가 들어가 배열의 총수는 6으로 증가하였다. index 3,4의 값은 undefined
+`(6) ['red', 'blue', 'black', empty × 2, 'pink']`
+
+// 🎈array methods🎈
+// Unshift() - 배열의 첫번째 요소를 추가한다. 배열의 길이를 변하게한다.
+// Push() - 배열의 맨 끝에 값을 추가한다.
+// pop() - 배열에서 마지막 요소를 제거하고 그 요소를 반환한다.
+// shift() - 배열에서 첫 번째 요소를 제거하고, 제거된 요소를 반환한다. 이 메서드는 배열의 길이를 변하게 한다.
+
+let movie = [어벤저스, 마녀, 마녀2, 나니아연대기]
+movie.push(헤리포터1)
+// movie[어벤저스, 마녀, 마녀2, 나니아연대기,해리포터1] 맨끝 배열에 해리포터1을 추가한다.
+movie.pop()
+// let movie = [어벤저스, 마녀, 마녀2, 나니아연대기] 맨끝 배열에 있는 자료를 제거한다.
+
+//Array.concat() - 두가지 배열을 합친다.
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+// expected output: Array ["a", "b", "c", "d", "e", "f"]
+
+//🎈Array.includes() -> 배열안에 원하는 정보가 포함되어있는지 확인할때 사용
+
+const a = [1, 2, 3];
+
+console.log(a.includes(2));
+// expected output: true
+
+const pets = ['cat', 'dog', 'bat'];
+
+console.log(pets.includes('cat'));
+// expected output: true
+
+console.log(pets.includes('at'));
+// expected output: false
+
+// 🎈Array.indexOf() -> 배열안에 원하는 정보가 포함되어있는지 확인할때 사용 인덱스로 표시해준다.
+
+//const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+//console.log(beasts.indexOf('bison'));
+// expected output: 1
+
+// start from index 2
+//console.log(beasts.indexOf('bison', 2));
+// expected output: 4
+
+//console.log(beasts.indexOf('giraffe'));
+// expected output: -1
+
+// Array.reverse() -> 배열의 앞뒤를 뒤집어버린다.
+
+//const array1 = ['one', 'two', 'three'];
+//console.log('array1:', array1);
+// expected output: "array1:" Array ["one", "two", "three"]
+
+//const reversed = array1.reverse();
+//console.log('reversed:', reversed);
+// expected output: "reversed:" Array ["three", "two", "one"]
+
+
+// 🎈Array.slice() -> 어떤 배열의 begin부터 end까지(end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환합니다. 원본 배열은 바뀌지 않습니다.
+
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2));
+// expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice());
+// expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+
+// 🎈Array.splice() -> 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.
+// array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+
+
+// 🎄하나도 제거하지 않고, 2번 인덱스에 "drum"과 "guitar" 추가🎄
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+var removed = myFish.splice(2, 0, 'drum', 'guitar');
+
+// myFish is ["angel", "clown", "drum", "guitar", "mandarin", "sturgeon"]
+// removed is [], no elements removed
+
+// 🎄0번 인덱스에서 두 개 요소 제거하고 "parrot", "anemone", "blue" 추가🎄
+var myFish = ['angel', 'clown', 'trumpet', 'sturgeon'];
+var removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue');
+
+// myFish is ["parrot", "anemone", "blue", "trumpet", "sturgeon"]
+// removed is ["angel", "clown"]

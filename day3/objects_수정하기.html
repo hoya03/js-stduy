@@ -1,0 +1,100 @@
+// 🎈 objects 수정하기 🎈
+
+const 중간고사 = {
+  철수 : 96,
+  영숙 : 78
+}
+🎄 이런식으로 변경 or 추가 가능하다.
+중간고사.철수 = 'A+';
+중간고사.영숙 = 'B';
+중간고사.민식 = 'C+'
+
+// 🎈  배열(ARRAYS) + 객체(OBJECTS)  🎈
+
+const comments =[ 
+  {username : '토마스',  text: 'ha ha ha!', votes : 9},
+  {username : '아마존',  text:'I"m the best Person In the world!', votes : 999}
+]
+
+이렇게 배열과 객체를 함께 사용한다.
+comments[1].text
+'I"m the best Person In the world!'
+
+// 🎈 LOOPS 🎈
+루프의 종류
+1) for loop
+2) while loop
+3) for...of loop
+4) for...in loop
+
+
+for (
+  [initialExpression] = 초기문 : 반복문이 시작하기위한 초기조건 설정
+  [condition] = 조건문 : 반목문을 끝내기 위한 종료조건을 설정(조건이 true이면 다음 반복, false이면 종료)
+  [incrementExpression] = 증감문 : 반복문을 한 번 실행할 때마다 반복문에 사용되는 변수를 업데이트
+)
+    start at 1/stop at 10/ add 1 each time
+for(let i =1; i <= 10; i++){
+  console.log(i);
+}
+
+for(let i= 1; i<=20; i+=2){
+  console.log(i)
+}
+
+for(let i= 100; i>=0; i-=10){
+  console.log(i)
+}
+
+for(let i= 10; i<=1000; i*=10){
+  console.log(i)
+}
+
+// 🎈 위험한 무한루프! 🎈
+
+for(let i = 20; i>=0; i++){
+  console.log(i)
+}
+이렇게 코드를 만들게된다면 코드가 끝이 나지않기때문에 메모리를 계속사용하기때문에 컴퓨터에게 큰 부담감을 줄수있다(그리고 컴퓨터가 멈춘다😂). 무한 루프를 조심해야한다!
+
+// 🎈 배열 루프 🎈
+
+const animals = [
+  'lions', 
+  'tigers', 
+  'bears',
+  'kangaroo',
+  'deer',
+  'bear',
+  'seal',
+  'boar'
+];
+
+for(let i = 0; i < animals.length; i++){
+  console.log(i)
+}
+0
+1
+2
+3
+4
+5
+6
+7
+🎄 이렇게 배열안에 총 몇게의 자료가 포함되어있는지 확인이 가능하다 여기서 animals[i]을 사용하면
+for(let i = 0; i < animals.length; i++){
+  console.log(i,animals[i])
+} 
+0 'lions'
+1 'tigers'
+2 'bears'
+3 'kangaroo'
+4 'deer'
+5 'bear'
+6 'seal'
+7 'boar'
+
+🎄 만약 정렬된 배열의 순서를 반대로 출력하고 싶다면 !
+for(let i = animals.length-1; i >= 0; i--){
+  console.log(i,animals[i])
+} 
